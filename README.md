@@ -1,5 +1,5 @@
 # CS236-Final-Project
-![Read Our Poster](https://drive.google.com/uc?id=1YucQxLTpnLMOmLRIh8OfTbN3kWjPwZgX)
+![Read Our Poster](CS_236_Poster.png)
 
 ### Setting up the environment
 ```
