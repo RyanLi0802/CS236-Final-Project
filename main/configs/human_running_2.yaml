@@ -1,0 +1,71 @@
+pretrained_model_path: ./checkpoints/CompVis/stable-diffusion-v1-4
+output_dir: /content/drive/Shareddrives/CS236/final_project/outputs/fewshot/human_running_2
+train_data:
+  video_paths:
+  - training_videos/human_running/a_girl_in_hoodies_running_on_street_at_night.mp4
+  - training_videos/human_running/latin_girl_running_along_the_highway.mp4
+  - training_videos/human_running/athlete_running_in_the_neighborhood.mp4
+  - training_videos/human_running/a_happy_grandpa_jogging_under_the_trees.mp4
+  - training_videos/human_running/a_white_girl_running_in_the_forest.mp4
+  - training_videos/human_running/an_old_man_running_in_the_forest.mp4
+  - training_videos/human_running/a_young_man_running_under_sunlight.mp4
+  - training_videos/human_running/a_middle_age_man_running_in_the_park.mp4
+  - training_videos/human_running/a_grandpa_running_on_the_beach.mp4
+  - training_videos/human_running/a_bald_man_running_in_a_school_street.mp4
+  - training_videos/human_running/an_athletic_young_man_running_at_night.mp4
+  - training_videos/human_running/a_young_women_running_under_the_trees.mp4
+  - training_videos/human_running/an_athlete_running_in_a_race.mp4
+  - training_videos/human_running/latino_woman_running_on_the_street_at_night.mp4
+  - training_videos/human_running/asian_girl_running_under_sunset.mp4
+  - training_videos/human_running/an_athletic_asian_girl_running_across_the_bridge_in_the_morning.mp4
+  prompts:
+  - a girl in hoodies running on street at night
+  - latin girl running along the highway
+  - athlete running in the neighborhood
+  - a happy grandpa jogging under the trees
+  - a white girl running in the forest
+  - an old man running in the forest
+  - a young man running under sunlight
+  - a middle age man running in the park
+  - a grandpa running on the beach
+  - a bald man running in a school street
+  - an athletic young man running at night
+  - a young women running under the trees
+  - an athlete running in a race
+  - latino woman running on the street at night
+  - asian girl running under sunset
+  - an athletic asian girl running across the bridge in the morning
+  n_sample_frames: 16
+  width: 512
+  height: 320
+  sample_start_idx: 0
+  sample_frame_rate: 2
+validation_data:
+  prompts:
+  - mickey mouse is skiing on the snow
+  - spider man is skiing on the beach, cartoon style
+  - wonder woman, wearing a cowboy hat, is skiing
+  - a man, wearing pink clothes, is skiing at sunset
+  video_length: 16
+  width: 512
+  height: 320
+  num_inference_steps: 20
+  guidance_scale: 12.5
+  use_inv_latent: false
+  num_inv_steps: 50
+learning_rate: 3.0e-05
+train_batch_size: 1
+max_train_steps: 4800
+checkpointing_steps: 1000
+validation_steps: 100
+trainable_modules:
+- attn1.to_q
+- attn1.memory_update_layer
+- attn2.to_q
+- attn_temp
+seed: 33
+mixed_precision: fp16
+use_first_frame_conditioning: true
+use_8bit_adam: false
+gradient_checkpointing: true
+enable_xformers_memory_efficient_attention: true
