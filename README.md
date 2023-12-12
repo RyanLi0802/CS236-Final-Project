@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ### Training the Model
 1. Clone the git repository
 2. Download custom training videos from [Frozen-in-Time](https://meru.robots.ox.ac.uk/frozen-in-time/) and save them under `main/training_videos/[your training folder name]`
-3. Add a config file under `main/configs/[your config name]`, see existing configs as examples
+3. Add a config file under `main/configs/[your config name]`, see existing configs as examples. The suggested numbers of training steps are 4800, 12000, 16000.
 4. Run `cd main; accelerate launch train_cs236.py --config=[path-to-your-config]`
 
 ### Inference
